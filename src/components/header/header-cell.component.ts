@@ -29,7 +29,8 @@ import { nextSortDir } from '../../utils';
         [ngTemplateOutlet]="column.headerTemplate"
         [ngOutletContext]="{ 
           column: column, 
-          sortDir: sortDir
+          sortDir: sortDir,
+          dosort: sortHak
         }">
       </template>
       <span

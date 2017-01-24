@@ -29,7 +29,8 @@ import { nextSortDir } from '../../utils';
         [ngTemplateOutlet]="column.headerTemplate"
         [ngOutletContext]="{ 
           column: column, 
-          sortDir: sortDir
+          sortDir: sortDir,
+          dosort: sortHak
         }">
       </template>
       <span
@@ -41,6 +42,8 @@ import { nextSortDir } from '../../utils';
 })
 export class DataTableHeaderCellComponent {
 
+  private sortHak = this.onSort.bind(this);
+  
   @Input() sortType: SortType;
   @Input() column: any;
   @Input() sortAscendingIcon: string;
